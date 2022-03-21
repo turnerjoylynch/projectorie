@@ -1,7 +1,12 @@
 import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
-import { Login } from './auth/Login';
-import { Register } from './auth/Register';
+import { Login } from "./components/auth/Login";
+import { Register } from "./components/auth/Register";
+import { Home } from "./Home.js";
+import { ProjectList } from "./components/projects/ProjectList";
+import { ProjectDetail } from "./components/projects/ProjectDetail";
+import { ProjectForm } from "./components/projects/ProjectForm";
+import { ProjectEditForm } from "./components/projects/ProjectEditForm";
 
 // end imports
 
@@ -12,8 +17,8 @@ export const ApplicationViews = ({ isAuthenticated, setIsAuthenticated }) => {
     }
   
     const setAuthUser = (user) => {
-      sessionStorage.setItem("kennel_customer", JSON.stringify(user))
-      setIsAuthenticated(sessionStorage.getItem("kennel_customer") !== null)
+      sessionStorage.setItem("projectorie_user", JSON.stringify(user))
+      setIsAuthenticated(sessionStorage.getItem("projectorie_user") !== null)
     }
     
     return (
@@ -22,53 +27,23 @@ export const ApplicationViews = ({ isAuthenticated, setIsAuthenticated }) => {
                 <Route exact path="/" element={<Home />} />
                 <Route exact path="/login" element={<Login setAuthUser={setAuthUser} />} />
                 <Route exact path="/register" element={<Register />} />
-                // Locations Routes
-                <Route exact path="/locations" element={ 
+                // Projects Routes
+                <Route exact path="/projects" element={ 
                     <PrivateRoute>
-                        <LocationList />
+                        <ProjectList />
                     </PrivateRoute>} />
-                <Route path="/locations/:locationId" element={
+                <Route path="/projects/:projectId" element={
                     <PrivateRoute>
-                        <LocationDetail />
+                        <ProjectDetail />
                     </PrivateRoute>} />
-                <Route path="/locations/create" element={
+                <Route path="/projects/create" element={
                     <PrivateRoute>
-                        <LocationForm />
+                        <ProjectForm />
                     </PrivateRoute>} />
-
-                // Animals Routes
-                <Route exact path="/animals" element={
+                <Route path="/projects/:projectId/edit" element={
                     <PrivateRoute>
-                        <AnimalList />
-                    </PrivateRoute>
-                } />
-                <Route exact path="/animals/:animalId" element={
-                    <PrivateRoute>
-                        <AnimalDetail />
-                    </PrivateRoute>
-                    } />
-                
-                <Route path="/animals/:animalId/edit" element={
-                    <PrivateRoute>
-                        <AnimalEditForm />
-                    </PrivateRoute>
-                    } />
-                <Route path="/animals/create" element={<AnimalForm />} />
-
-                // Customer Routes
-                <Route path="/customers" element={ 
-                    <PrivateRoute>
-                        <CustomerList />
-                    </PrivateRoute>
-                } />
-                
-                // Employee Routes
-                <Route exact path="/employees" element={ 
-                    <PrivateRoute>
-                        <EmployeeList />
-                    </PrivateRoute>
-                } />
-
+                        <ProjectEditForm />
+                    </PrivateRoute>} />
             </Routes>
         </>
     )

@@ -43,8 +43,8 @@ export const Register = () => {
                         .then(res => res.json())
                         .then(createdUser => {
                             if (createdUser.hasOwnProperty("id")) {
-                                // The user id is saved under the key nutshell_user in session Storage. Change below if needed!
-                                sessionStorage.setItem("nutshell_user", createdUser.id)
+                                // The user id is saved under the key projectorie_user in session Storage. Change below if needed!
+                                sessionStorage.setItem("projectorie_user", createdUser.id)
                                 navigate("/")
                             }
                         })
@@ -69,7 +69,7 @@ export const Register = () => {
 
       <form className="form--login" onSubmit={handleRegister}>
         <h1 className="h3 mb-3 font-weight-normal">
-          Please Register for Application Name
+          Please Register for Projectorie
         </h1>
         <fieldset>
           <label htmlFor="firstName"> First Name </label>
