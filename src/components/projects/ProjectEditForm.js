@@ -22,7 +22,7 @@ export const ProjectEditForm = () => {
 
     // This is an edit, so we need the id
     const editedProject = {
-      id: projectId,
+      id: project.projectId,
       name: project.projectName,
       description: project.projectDescription
     };

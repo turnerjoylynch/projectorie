@@ -12,10 +12,10 @@ export const ProjectCard = ({ project, handleDeleteProject}) => {
             {project.projectName}
           </span></h3>
           <p>Description: {project.projectDescription}</p>
-          <Link to={`/project/${project.id}`}>
+          <Link to={`/projects/${project.id}`}>
             <button>Details</button>
           </Link>
-          <Link to={`/project/${project.id}/edit`}>
+          <Link to={`/projects/${project.id}/edit`}>
             <button>Edit</button>
           </Link>
           <button type="button" onClick={() => handleDeleteProject(project.id)}>Delete</button>
