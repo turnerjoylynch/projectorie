@@ -4,7 +4,7 @@ import { getProjectById, deleteProject } from "../../modules/ProjectManager";
 import "./ProjectDetail.css";
 
 export const ProjectDetail = () => {
-  const [project, setProject] = useState({ title: "", description: "" });
+  const [project, setProject] = useState({ projectName: "", projectDescription: "" });
   const [isLoading, setIsLoading] = useState(true);
 
   const {projectId} = useParams();

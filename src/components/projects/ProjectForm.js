@@ -42,13 +42,15 @@ export const ProjectForm = () => {
 			<fieldset>
 				<div className="form-group">
 					<label htmlFor="name">Project name:</label>
-					<input type="text" id="name" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Project name" value={project.projectName} />
+					<input type="text" id="name" onChange={handleControlledInputChange} 
+					required autoFocus className="form-control" placeholder="Project name" value={project.projectName} />
 				</div>
 			</fieldset>
 			<fieldset>
 				<div className="form-group">
 					<label htmlFor="description">Project Description:</label>
-					<input type="text" id="description" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Project description" value={project.projectDescription} />
+					<input type="text" id="description" onChange={handleControlledInputChange} 
+					required autoFocus className="form-control" placeholder="Project description" value={project.projectDescription} />
 				</div>
 			</fieldset>
 		<button className="btn btn-primary"
