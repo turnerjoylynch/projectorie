@@ -1,7 +1,7 @@
 const remoteURL = "http://localhost:8088"
 
-export const getProjectById = (project) => {
-  return fetch(`${remoteURL}/projects/${project.id}?_expand=projectName&_expand=projectDescription`)
+export const getProjectById = (projectId) => {
+  return fetch(`${remoteURL}/projects/${projectId}?_expand=projectName&_expand=projectDescription`)
   .then(res => res.json())
 }
 
@@ -10,8 +10,8 @@ export const getAllProjects = () => {
   .then(res => res.json())
 }
 
-export const deleteProject = (project) => {
-  return fetch(`${remoteURL}/projects/${project.id}`, {
+export const deleteProject = (projectId) => {
+  return fetch(`${remoteURL}/projects/${projectId}`, {
     method: "DELETE"
   }).then(result => result.json())
 }

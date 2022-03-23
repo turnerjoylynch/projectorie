@@ -7,6 +7,10 @@ import { ProjectList } from "./components/projects/ProjectList";
 import { ProjectDetail } from "./components/projects/ProjectDetail";
 import { ProjectForm } from "./components/projects/ProjectForm";
 import { ProjectEditForm } from "./components/projects/ProjectEditForm";
+import { IdeaList } from "./components/ideas/IdeaList";
+import { IdeaDetail } from "./components/ideas/IdeaDetail";
+import { IdeaForm } from "./components/ideas/IdeaForm";
+// import { IdeaEditForm } from "./components/ideas/IdeaEditForm";
 
 // end imports
 
@@ -44,6 +48,26 @@ export const ApplicationViews = ({ isAuthenticated, setIsAuthenticated }) => {
                     <PrivateRoute>
                         <ProjectEditForm />
                     </PrivateRoute>} />
+                    // Ideas Routes
+                <Route exact path="/projects/:projectId/:ideaId" element={
+                    <PrivateRoute>
+                        <IdeaList />
+                    </PrivateRoute>
+                } />
+                <Route exact path="/projects/:projectId/:ideaId" element={
+                    <PrivateRoute>
+                        <IdeaDetail />
+                    </PrivateRoute>
+                    } />
+                
+                {/* <Route path="/projects/:projectId/:ideaId/edit" element={
+                    <PrivateRoute>
+                        <IdeaEditForm />
+                    </PrivateRoute>
+                    } /> */}
+                <Route path="/projects/:projectId/create" element={<IdeaForm />} />
+
+
             </Routes>
         </>
     )
