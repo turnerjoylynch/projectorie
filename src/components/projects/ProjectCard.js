@@ -12,6 +12,7 @@ export const ProjectCard = ({ project, handleDeleteProject}) => {
             {project.projectName}
           </span></h3>
           <p>Description: {project.projectDescription}</p>
+          <p>User: {project.userId?.name}</p>
           <Link to={`/projects/${project.id}`}>
             <button>Details</button>
           </Link>

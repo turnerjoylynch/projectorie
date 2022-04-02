@@ -9,6 +9,7 @@ export const IdeaForm = () => {
 	// Define the initial state of the form inputs with useState()
 
 	const [idea, setIdea] = useState({
+        id: "",
 		ideaName: "",
 		ideaUrl: "",
 		ideaQuantity: "",
@@ -64,35 +65,35 @@ export const IdeaForm = () => {
 			<fieldset>
 				<div className="form-group">
 					<label htmlFor="name">Idea name:</label>
-					<input type="text" id="name" onChange={handleControlledInputChange} required autoFocus className="form-control" 
+					<input type="text" id="ideaName" onChange={handleControlledInputChange} required autoFocus className="form-control" 
                     placeholder="Idea name" value={idea.ideaName} />
 				</div>
 			</fieldset>
 			<fieldset>
 				<div className="form-group">
 					<label htmlFor="url">Idea URL:</label>
-					<input type="text" id="url" onChange={handleControlledInputChange} required autoFocus className="form-control" 
+					<input type="text" id="ideaUrl" onChange={handleControlledInputChange} required autoFocus className="form-control" 
                     placeholder="Idea URL" value={idea.ideaUrl} />
 				</div>
 			</fieldset>
             <fieldset>
 				<div className="form-group">
 					<label htmlFor="url">Idea Quantity:</label>
-					<input type="text" id="quantity" onChange={handleControlledInputChange} required autoFocus className="form-control" 
+					<input type="text" id="ideaQuantity" onChange={handleControlledInputChange} required autoFocus className="form-control" 
                     placeholder="Idea Quantity" value={idea.ideaQuantity} />
 				</div>
 			</fieldset>
             <fieldset>
 				<div className="form-group">
 					<label htmlFor="url">Idea Price:</label>
-					<input type="text" id="url" onChange={handleControlledInputChange} required autoFocus className="form-control" 
+					<input type="text" id="ideaPrice" onChange={handleControlledInputChange} required autoFocus className="form-control" 
                     placeholder="Idea Price" value={idea.ideaPrice} />
 				</div>
 			</fieldset>
             <fieldset>
 				<div className="form-group">
 					<label htmlFor="url">Idea Description:</label>
-					<input type="text" id="url" onChange={handleControlledInputChange} required autoFocus className="form-control" 
+					<input type="text" id="ideaDescription" onChange={handleControlledInputChange} required autoFocus className="form-control" 
                     placeholder="Idea Description" value={idea.ideaDescription} />
 				</div>
 			</fieldset>

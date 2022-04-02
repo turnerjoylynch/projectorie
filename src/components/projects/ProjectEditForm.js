@@ -22,7 +22,7 @@ export const ProjectEditForm = () => {
 
     // This is an edit, so we need the id
     const editedProject = {
-      id: project.projectId,
+      id: projectId,
       name: project.projectName,
       description: project.projectDescription
     };
@@ -33,7 +33,7 @@ export const ProjectEditForm = () => {
   }
 
   useEffect(() => {
-    getProjectById(projectId)
+    getProjectById(project)
       .then(project => {
         setProject(project);
         setIsLoading(false);
@@ -50,7 +50,7 @@ export const ProjectEditForm = () => {
               required
               className="form-control"
               onChange={handleFieldChange}
-              id="name"
+              id="projectName"
               value={project.projectName}
             />
             <label htmlFor="name">Project name</label>
@@ -60,7 +60,7 @@ export const ProjectEditForm = () => {
               required
               className="form-control"
               onChange={handleFieldChange}
-              id="description"
+              id="projectDescription"
               value={project.projectDescription}
             />
             <label htmlFor="description">Description</label>

@@ -8,11 +8,11 @@ export const ProjectForm = () => {
 	// Define the initial state of the form inputs with useState()
 
 	const [project, setProject] = useState({
-        id: [],
-        userId: [],
+        id: 0,
+        userId: 0,
         projectName: "",
         projectDescription: "",
-        timestamp: []
+        timestamp: 0
 	});
 
 	const [isLoading, setIsLoading] = useState(false);
@@ -29,11 +29,10 @@ export const ProjectForm = () => {
 		setProject(newProject)
 	}
 
-
 	const handleClickSaveProject = (event) => {
-		event.preventDefault() 
-			addProject(project)
-				.then(() => navigate("/projects"))
+		event.preventDefault()
+		addProject(project)
+			.then(() => navigate("/projects"))
 	}
 
 	return (
@@ -42,13 +41,13 @@ export const ProjectForm = () => {
 			<fieldset>
 				<div className="form-group">
 					<label htmlFor="name">Project name:</label>
-					<input type="text" id="name" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Project name" value={project.projectName} />
+					<input type="text" id="projectName" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Project name" value={project.projectName} />
 				</div>
 			</fieldset>
 			<fieldset>
 				<div className="form-group">
 					<label htmlFor="description">Project Description:</label>
-					<input type="text" id="description" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Project description" value={project.projectDescription} />
+					<input type="text" id="projectDescription" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Project description" value={project.projectDescription} />
 				</div>
 			</fieldset>
 		<button className="btn btn-primary"

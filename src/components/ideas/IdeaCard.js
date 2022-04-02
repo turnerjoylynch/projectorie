@@ -23,3 +23,4 @@ export const IdeaCard = ({ idea, handleDeleteIdea}) => {
       </div>
     );
   }
+

@@ -30,7 +30,7 @@ export const ProjectDetail = () => {
     <section className="project">
       <h3 className="project__name">{project.projectName}</h3>
       <div className="project__description">{project.projectDescription}</div>
-      <div className="project__owner">User: {project.user?.name}</div>
+      <div className="project__owner">User: {project.userId?.name}</div>
       <button type="button" disabled={isLoading} onClick={handleDelete}>
           Delete
         </button>

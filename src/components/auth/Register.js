@@ -69,7 +69,7 @@ export const Register = () => {
 
       <form className="form--login" onSubmit={handleRegister}>
         <h1 className="h3 mb-3 font-weight-normal">
-          Please Register for Projectorie
+          Register for Projectorie
         </h1>
         <fieldset>
           <label htmlFor="firstName"> First Name </label>

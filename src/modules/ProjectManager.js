@@ -10,8 +10,8 @@ export const getAllProjects = () => {
   .then(res => res.json())
 }
 
-export const deleteProject = (projectId) => {
-  return fetch(`${remoteURL}/projects/${projectId}`, {
+export const deleteProject = (id) => {
+  return fetch(`${remoteURL}/projects/${id}`, {
     method: "DELETE"
   }).then(result => result.json())
 }
