@@ -2,22 +2,23 @@
 
 
 .h1, h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-family: 'Judson', serif;
     color: rgb(35, 46, 25);
 }
 
-.navbar {
+.footer {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
     background-color:#C8BEB5;
     padding: 2em;
+    position: absolute;
     width: 100%;
-    top: 0px;
+    bottom: 0px;
 }
 
-.navbar__item {
+.footer__item {
     flex-basis: 20%;
     list-style-type: none;
 }

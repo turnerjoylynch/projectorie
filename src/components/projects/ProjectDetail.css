@@ -48,3 +48,11 @@ img {
   .card button:hover {
     background-color:#C8BEB5;
   }
+
+  .button {
+    padding: .5em;
+    margin: .5em;
+    position: relative;
+    align-content: center;
+    align-items: flex-end;
+  }

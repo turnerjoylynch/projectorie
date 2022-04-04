@@ -4,9 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { Projectorie } from './components/Projectorie'
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,800;1,800&display=swap');
-</style>
+
 
 ReactDOM.render(
   <React.StrictMode>

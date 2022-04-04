@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { IdeaCard } from './IdeaCard';
 import { getAllIdeas, deleteIdea } from '../../modules/IdeaManager';
+import { getProjectById } from "../../modules/ProjectManager";
 import "./Idea.css";
 
 export const IdeaList = () => {
     // The initial state is an empty array
     const [ideas, setIdeas] = useState([]);
 
+    const {projectId} = useParams();
     const navigate = useNavigate();
 
     const getIdeas = () => {
@@ -18,7 +20,7 @@ export const IdeaList = () => {
         });
     };
 
-    // got the animals from the API on the component's first render
+    // got the ideas from the API on the component's first render
     useEffect(() => {
         getIdeas();
     }, []);
@@ -28,15 +30,14 @@ export const IdeaList = () => {
         .then(() => getAllIdeas().then(setIdeas));
     };
 
-    // Finally we use .map() to "loop over" the animals array to show a list of idea cards
+    // Finally we use .map() to "loop over" the ideas array to show a list of idea cards
     return (
         < >
         <section className="section-content">
-        <button type="button"
-         className="btn"
-         onClick={() => {navigate("/ideas/create")}}>
-             Create Idea
-        </button>
+        <Link to={`/projects/${projectId}/create`}>
+            <button type="button"
+         className="btn" >Add</button>
+          </Link>
     </section>
          <div className="container-cards">
           {ideas.map(idea => <IdeaCard

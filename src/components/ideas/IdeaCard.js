@@ -1,10 +1,12 @@
 import React from "react"
-import { Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import "./Idea.css"
 import "../../modules/IdeaManager"
 
 
 export const IdeaCard = ({ idea, handleDeleteIdea}) => {
+  const {projectId} = useParams();
+
     return (
       <div className="card">
         <div className="card-content">
@@ -12,7 +14,7 @@ export const IdeaCard = ({ idea, handleDeleteIdea}) => {
             {idea.ideaName}
           </span></h3>
           <p>Description: {idea.ideaDescription}</p>
-          <Link to={`/ideas/${idea.id}`}>
+          <Link to={`projects/${projectId}/${idea.id}`}>
             <button>Details</button>
           </Link>
           <Link to={`/ideas/${idea.id}/edit`}>

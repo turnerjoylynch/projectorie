@@ -5,6 +5,11 @@ export const getIdeaById = (ideaId) => {
   .then(res => res.json())
 }
 
+export const getIdeaByProjectId = (ideaId) => {
+  return fetch(`${remoteURL}/ideas/${ideaId.projectId}?_expand=projectId&_expand=ideaName&_expand=ideaDescription`)
+  .then(res => res.json())
+}
+
 export const getAllIdeas = () => {
   return fetch(`${remoteURL}/ideas`)
   .then(res => res.json())

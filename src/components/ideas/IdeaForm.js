@@ -104,7 +104,7 @@ export const IdeaForm = () => {
 						<option value="0">Select a project</option>
 						{projects.map(c => (
 							<option key={c.id} value={c.id}>
-								{c.name}
+								{c.projectName}
 							</option>
 						))}
 					</select>
