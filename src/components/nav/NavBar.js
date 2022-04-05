@@ -12,6 +12,7 @@ export const NavBar = ({ clearUser, isAuthenticated }) => {
 
     return (
         <ul className="navbar">
+            {/* <li className="navbar__item" href="/"><img className="logo-image" src="projectorie-logo.png"/></li> */}
             <li className="navbar__item">
                 <Link className="navbar__link" to="/"> Home </Link>
             </li>

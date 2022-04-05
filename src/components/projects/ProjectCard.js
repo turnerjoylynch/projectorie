@@ -8,11 +8,11 @@ export const ProjectCard = ({ project, handleDeleteProject}) => {
     return (
       <div className="card">
         <div className="card-content">
-          <h3>Name: <span className="content-projectname">
+          <h3> <span className="content-projectname">
             {project.projectName}
           </span></h3>
-          <p>Description: {project.projectDescription}</p>
-          <p>User: {project.userId?.name}</p>
+          <p>{project.projectDescription}</p>
+          {/* <p>By: {project.userId?.name}</p> */}
           <Link to={`/projects/${project.id}`}>
             <button>Details</button>
           </Link>

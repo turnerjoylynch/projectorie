@@ -14,7 +14,7 @@ export const IdeaCard = ({ idea, handleDeleteIdea}) => {
             {idea.ideaName}
           </span></h3>
           <p>Description: {idea.ideaDescription}</p>
-          <Link to={`projects/${projectId}/${idea.id}`}>
+          <Link to={`projects/${idea.id}`}>
             <button>Details</button>
           </Link>
           <Link to={`/ideas/${idea.id}/edit`}>

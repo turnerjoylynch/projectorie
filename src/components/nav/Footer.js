@@ -20,7 +20,7 @@ export const Footer  = () => {
             <li className="footer__item">
                     <Link className="footer__link" to="/login">Login</Link>
                 </li>
-                <li className="footer__item">Copyright 2022 Projectorie</li>
+                <li className="footer__item">2022 Projectorie</li>
         </ul>
     );
 };

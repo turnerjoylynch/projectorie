@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { addProject } from '../../modules/ProjectManager';
+import { addIdea } from '../../modules/IdeaManager';
 import { getAllProjects } from '../../modules/ProjectManager';
 import './Idea.css'
 
@@ -30,7 +30,7 @@ export const IdeaForm = () => {
 	const handleControlledInputChange = (event) => {
 		const newIdea = { ...idea }
 		let selectedVal = event.target.value
-		if (event.target.id.includes("Id")) {
+		if (event.target.id.includes("ideaId")) {
 			selectedVal = parseInt(selectedVal)
 		}
 		newIdea[event.target.id] = selectedVal
@@ -54,8 +54,8 @@ export const IdeaForm = () => {
 		if (projectId === 0) {
 			window.alert("Please select a project for this idea")
 		} else {
-			addProject({})
-				.then(() => navigate("/projects"))
+			addIdea({})
+				.then(() => navigate("/projects/:projectId"))
 		}
 	}
 

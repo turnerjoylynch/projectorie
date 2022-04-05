@@ -5,3 +5,10 @@
     font-size: 2.5rem;
     font-family: 'Judson', serif;
 }
+
+.ideaForm {
+    max-width: 550px;
+    min-width: 170px;
+    min-height: 245px;
+    padding: 2em;
+}

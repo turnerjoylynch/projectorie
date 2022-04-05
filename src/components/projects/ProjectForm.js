@@ -22,7 +22,7 @@ export const ProjectForm = () => {
 	const handleControlledInputChange = (event) => {
 		const newProject = { ...project }
 		let selectedVal = event.target.value
-		if (event.target.id.includes("Id")) {
+		if (event.target.id.includes("projectId")) {
 			selectedVal = parseInt(selectedVal)
 		}
 		newProject[event.target.id] = selectedVal

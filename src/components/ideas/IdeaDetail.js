@@ -31,7 +31,7 @@ export const IdeaDetail = () => {
     //invoke the delete function in IdeaManager and re-direct to the idea list.
     setIsLoading(true);
     deleteIdea(ideaId).then(() =>
-      navigate("/ideas")
+      navigate("/:projectId")
     );
   };
 

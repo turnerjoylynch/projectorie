@@ -48,20 +48,16 @@ export const ApplicationViews = ({ isAuthenticated, setIsAuthenticated }) => {
                     <PrivateRoute>
                         <ProjectEditForm />
                     </PrivateRoute>} />
-                    // Ideas Routes
-                <Route exact path="/projects/:projectId/:ideas/view" element={
-                    <PrivateRoute>
-                        <IdeaList />
-                    </PrivateRoute>} />
-                <Route exact path="/projects/:projectId/:ideaId" element={
+                    // Ideas Routes - Note: IdeaList included in ProjectDetail 
+                <Route path="/projects/:ideaId" element={
                     <PrivateRoute>
                         <IdeaDetail />
                     </PrivateRoute>} />
-                <Route path="/projects/:projectId/:ideaId/edit" element={
+                <Route path="/ideas/:ideaId/edit" element={
                     <PrivateRoute>
                         <IdeaEditForm />
                     </PrivateRoute> } />      
-                <Route path="/projects/:projectId/create" element={
+                <Route path="/projects/:projectId/create-idea" element={
                     <PrivateRoute>
                         <IdeaForm />
                     </PrivateRoute> } />

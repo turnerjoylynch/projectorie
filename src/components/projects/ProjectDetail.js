@@ -33,7 +33,7 @@ export const ProjectDetail = () => {
     <section className="project">
       <h3 className="project__name">{project.projectName}</h3>
       <div className="project__description">{project.projectDescription}</div>
-      <div className="project__owner">User: {project.userId?.name}</div>
+      {/* <div className="project__owner">User: {project.userId?.name}</div> */}
           </section>
       <Link to={`/projects/${project.id}/edit`}>
             <button>Edit</button>
